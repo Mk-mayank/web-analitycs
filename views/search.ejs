@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= title %></title>
+</head>
+<body>
+    <form id="searchForm">
+        <input type="text" id="searchQuery" placeholder="Search for hotels..." required />
+        <button type="submit">Search</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('searchForm');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const searchQuery = document.getElementById('searchQuery').value;
+
+            // Send search query to the backend
+            fetch('/search', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query: searchQuery }),
+            })
+                .then((response) => response.text())
+                // .then((data) => {
+                //     alert(data); // Show confirmation
+                // })
+                .catch((error) => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

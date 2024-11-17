@@ -14,8 +14,11 @@
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.21.1",
+    "express-useragent": "^1.0.15",
     "mysql": "^2.18.1",
     "mysql2": "^3.11.4",
+    "ua-parser-js": "^1.0.39",
+    "useragent": "^2.3.0",
     "web-analitycs": "file:"
   }
 }
